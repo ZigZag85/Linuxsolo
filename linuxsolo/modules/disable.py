@@ -5,22 +5,22 @@ from telegram import ParseMode, Update, Bot, Chat, User
 from telegram.ext import CommandHandler, RegexHandler, Filters
 from telegram.utils.helpers import escape_markdown
 
-from emilia import dispatcher, spamfilters, OWNER_ID
-from emilia.modules.helper_funcs.handlers import CMD_STARTERS
-from emilia.modules.helper_funcs.misc import is_module_loaded
-from emilia.modules.connection import connected
+from linuxsolo import dispatcher, spamfilters, OWNER_ID
+from linuxsolo.modules.helper_funcs.handlers import CMD_STARTERS
+from linuxsolo.modules.helper_funcs.misc import is_module_loaded
+from linuxsolo.modules.connection import connected
 
-from emilia.modules import languages
-from emilia.modules.helper_funcs.alternate import send_message
+from linuxsolo.modules import languages
+from linuxsolo.modules.helper_funcs.alternate import send_message
 
 FILENAME = __name__.rsplit(".", 1)[-1]
 
 # If module is due to be loaded, then setup all the magical handlers
 if is_module_loaded(FILENAME):
-    from emilia.modules.helper_funcs.chat_status import user_admin, is_user_admin
+    from linuxsolo.modules.helper_funcs.chat_status import user_admin, is_user_admin
     from telegram.ext.dispatcher import run_async
 
-    from emilia.modules.sql import disable_sql as sql
+    from linuxsolo.modules.sql import disable_sql as sql
 
     DISABLE_CMDS = []
     DISABLE_OTHER = []
