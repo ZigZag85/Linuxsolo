@@ -157,9 +157,8 @@ def start(bot: Bot, update: Update, args: List[str]):
         else:
             first_name = update.effective_user.first_name
             buttons = InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="🎉 Add me to your group", url="https://t.me/UserbotindoBot?startgroup=new")],
-                [InlineKeyboardButton(text="💭 Language", callback_data="main_setlang"), InlineKeyboardButton(text="⚙️ Connect Group", callback_data="main_connect")],
-                [InlineKeyboardButton(text="👥 Support Group", url="https://t.me/userbotindo"), InlineKeyboardButton(text="🔔 Update Channel", url="https://t.me/userbotindocloud")],
+                [[InlineKeyboardButton(text="💭 Language", callback_data="main_setlang"), InlineKeyboardButton(text="⚙️ Connect Group", callback_data="main_connect")],
+                [InlineKeyboardButton(text="👥 Support Group", url="https://t.me/moviesonlybotupdates"), InlineKeyboardButton(text="🔔 Update Channel", url="https://t.me/moviesonlybotupdates")],
                 [InlineKeyboardButton(text="❓ Help", url="https://t.me/UserbotindoBot?start=help"), InlineKeyboardButton(text="💖 Donate", url="http://paypal.me/prgofficial")]])
             update.effective_message.reply_text(
                 tl(update.effective_message, PM_START_TEXT).format(escape_markdown(first_name), escape_markdown(bot.first_name), OWNER_ID),
